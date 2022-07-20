@@ -15,9 +15,9 @@ from __future__ import absolute_import
 from __future__ import division
 from __future__ import print_function
 from paddle import nn
-from models.detector.backbone import build_backbone
-from models.detector.neck import build_neck
-from models.detector.head import build_head
+from models.det_module.backbone import build_backbone
+from models.det_module.neck import build_neck
+from models.det_module.head import build_head
 
 __all__ = ['BaseModel']
 

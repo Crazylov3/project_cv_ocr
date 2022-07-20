@@ -20,7 +20,7 @@ import paddle
 from paddle import nn
 import paddle.nn.functional as F
 from paddle import ParamAttr
-from models.detector.backbone.mobilenet_v3 import SEModule
+from models.det_module.backbone.mobilenet_v3 import SEModule
 
 
 class DSConv(nn.Layer):

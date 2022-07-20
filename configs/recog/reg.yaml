@@ -1,0 +1,35 @@
+vocab: 'aAàÀảẢãÃáÁạẠăĂằẰẳẲẵẴắẮặẶâÂầẦẩẨẫẪấẤậẬbBcCdDđĐeEèÈẻẺẽẼéÉẹẸêÊềỀểỂễỄếẾệỆfFgGhHiIìÌỉỈĩĨíÍịỊjJkKlLmMnNoOòÒỏỎõÕóÓọỌôÔồỒổỔỗỖốỐộỘơƠờỜởỞỡỠớỚợỢpPqQrRsStTuUùÙủỦũŨúÚụỤưƯừỪửỬữỮứỨựỰvVwWxXyYỳỲỷỶỹỸýÝỵỴzZ0123456789!"#$%&''()*+,-./:;<=>?@[\]^_`{|}~ '
+backbone: vgg19_bn
+dataset:
+  image_height: 256
+  image_min_width: 256
+  image_max_width: 512
+cnn:
+  # pooling stride size
+  ss:
+    - [ 2, 2 ]
+    - [ 2, 2 ]
+    - [ 2, 1 ]
+    - [ 2, 1 ]
+    - [ 1, 1 ]
+  # pooling kernel size
+  ks:
+    - [ 2, 2 ]
+    - [ 2, 2 ]
+    - [ 2, 1 ]
+    - [ 2, 1 ]
+    - [ 1, 1 ]
+  # dim of ouput feature map
+  hidden: 256
+seq_modeling: seq2seq
+transformer:
+  encoder_hidden: 256
+  decoder_hidden: 256
+  img_channel: 256
+  decoder_embedded: 256
+  dropout: 0.1
+predictor:
+  # disable or enable beamsearch while prediction, use beamsearch will be slower
+  beamsearch: False
+pretrained_path: ./tmp/weight.pth
+device: cpu

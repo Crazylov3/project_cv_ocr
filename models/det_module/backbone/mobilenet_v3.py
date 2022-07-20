@@ -143,6 +143,7 @@ class MobileNetV3(nn.Layer):
             self.add_sublayer(sublayer=stage, name="stage{}".format(i))
 
     def forward(self, x):
+        # print(type(x))
         x = self.conv(x)
         out_list = []
         for stage in self.stages:

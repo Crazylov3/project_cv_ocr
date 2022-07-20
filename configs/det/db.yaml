@@ -12,3 +12,10 @@ Architecture:
   Head:
     name: DBHead
     k: 50
+device: cpu
+PostProcess:
+  name: DBPostProcess
+  thresh: 0.3
+  box_thresh: 0.6
+  max_candidates: 1000
+  unclip_ratio: 1.5
